@@ -1,0 +1,88 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: #D7D7D7;
+}
+
+img{
+    border-radius: 15px;
+}
+
+.principal{
+    width: 85%;
+    height: fit-content;
+    background: #F3F6F9;
+    margin: -15px auto;
+    border-radius: 10px ;
+    box-shadow: -1px 4px 7px -2px rgba(0,0,0,0.5);
+}
+
+.principal h1{
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    background: #333;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+h5{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.listas{
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+    grid-template-areas:   
+        "izquierda derecha"
+        "abajo derecha";
+    
+}
+
+.ciclos, .mas_ciclos, .down{
+    background: white;
+    margin: 10px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+}
+
+.ciclos{
+    grid-area: izquierda;
+}
+
+.mas_ciclos{
+    height: fit-content;
+    grid-area: derecha;
+}
+
+.down{
+    height: 90%;
+    grid-area: abajo;
+    margin-top: 0px;
+}
+
+.formulario{
+    border: 1px solid #333;
+    padding: 7px;
+    border-radius: 10px;
+    color: white;
+    background: #333;
+    font-weight: bold;
+}
+
+.formulario:hover{
+    text-decoration: none;
+    background: white;
+    color: #333;
+    border: 1px solid #D7D7D7;
+}
+
+
+h6{
+    font-size: 20px;
+}

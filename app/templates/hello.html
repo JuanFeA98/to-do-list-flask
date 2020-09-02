@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %} 
+    {{ super()}}
+    Bienvenido
+{% endblock %}
+
+{% block content%}      
+
+    <section class="principal">
+        {% if username %}
+            <div class="condicional">
+                {% if user_ip %}
+                    <h3>Hola {{username | capitalize}}, tu dirección IP es: {{user_ip}}</h3>
+                {% else %}
+                    <a href="{{ url_for('index')}}">Ir a inicio</a>
+                {% endif %}
+            </div>
+        {% else %}
+        <div class="condicional">
+            {% if user_ip %}
+                <h3>Hola, tu dirección IP es: {{user_ip}}</h3>
+            {% else %}
+                <a href="{{ url_for('index')}}">Ir a inicio</a>
+            {% endif %}
+        </div>
+        {% endif%}
+
+
+        <h5>Listas de pendientes</h5>
+        <div class="listas">
+            <ul class="ciclos">
+                <h6>Crear tareas</h6>
+
+                {{ wtf.quick_form(to_do_form) }}
+
+             
+            </ul>
+            <ul class="mas_ciclos list-group ">
+                {% for todo in todos %}
+                    {{macros.render_todo(todo, delete_form, update_form)}}
+                {% endfor %}
+            </ul>
+            <div class="down">
+                
+                <a href="/auth/login" class="formulario">Formulario</a>
+            </div>
+        </div>
+        
+    </section>
+{% endblock%}
